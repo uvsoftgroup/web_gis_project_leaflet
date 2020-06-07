@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Building Information</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+	    
+    <link rel="stylesheet" type="text/css" href="buildingInfo.css">
+	<script src="dhakacityroadnetwork.geojson"></script> 
+	
+	<script language="javascript" type="text/javascript" src="js/flot/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/flot/jquery.flot.pie.pack.js"></script>
+	<script src="https://cdn-webgl.eegeo.com/eegeojs/early_access/latest/eegeo.js"></script>
+	
+</head>
+
+<body>
+<table> 
+<tr>
+<td width="25%">
+<table>
+<tr>
+<td><h3>About Dhaka City</h3>
+<p> Dhaka,formerly spelled as Dacca in English,is the capital and one of the oldest cities of Bangladesh.After Mughals, British ruled the region for over 150 years until the independence of India. In 1947,Dhaka became the capital of the East Bengal province under the dominion of Pakistan. After the independence of Bangladesh in 1971,Dhaka became the capital of the new state.Dhaka has 16 million inhabitance and its cover 306.4 km².</p>
+</td>
+</tr>
+<tr>
+<td><img src="building1.gif" alt="Mountain View" height="100%" width="100%"></td>
+</tr>
+</table>
+</td>
+<td width="25%"> 
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+   <li><a href="tag1.html">Mobility Survey</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<div id="mapid" class="lcol"></div>
+</td>
+
+<td width="25%" > 
+<form name="myForm" action="tag1.html" method="post" onsubmit="return formValidation()" >
+
+<table>
+<tr>
+<td><h4>Average mobility distribution[%] in Germany</h4></td>
+</tr>
+<tr>
+<td><div id="MOP_pie_graph" class="grap"></div></td>
+</tr>
+</table>
+
+
+<table>
+<tr>
+<td><input type="button" class="button" onclick="location.href='tag1.html';" value="Now calculate your mobility distribution[%]"</td>
+</tr>
+<tr>
+<td><div id="Your_pie_graph" class="grap"></div></td>
+</tr>
+</table>
+
+</form>
+
+ 
+</td>
+ </tr>
+</table>
+<!-- map project javascript -->
+   <script src="buildingInfo.js"></script>
+   
+ <div id="footer" class="footer">Copyright © Islam & Sabrina Hska</div>
+  
+</body>
+</html>

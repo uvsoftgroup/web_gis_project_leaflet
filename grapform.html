@@ -1,0 +1,75 @@
+<html>
+<body>
+ <p><font size="5" face="arial">Area Description </font> </p>
+<head>
+<script type="text/javascript">
+function formValidation(){
+
+  var trip_count_1 = 0;
+// name 
+ // name ckecking
+ var name=nameckecking(document.forms["myForm"]["name"].value);
+  createCookie("your_name", name);
+
+  
+  
+// cookies 
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') 
+		c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) 
+		return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+function cookieFunction() {
+  alert("Tag 1: " + readCookie("Tag_1"));
+  createCookie("Tag_1", sum_1);
+  return true;
+}
+				
+		
+</script>
+</head>
+
+<form name="myForm" action="tag2.html" method="post" onsubmit="return formValidation()" >
+Working:<br>
+<input type="text" id="txt_fuss" name="fuss" size="25"> 
+<br>
+Bycycle & Rickshaw:<br>
+<input type="text" id="txt_rad" name="rad" size="25">
+<br>
+Private Car:<br>
+<input type="text" id="txt_pkw" name="pkw" size="25">
+<br>
+Public Transport:<br>
+<input type="text" id="txt_ov" name="ov" size="25">
+<br>
+Other Transport Mode:<br>
+<input type="text" id="txt_sonst" name="sonst" size="25">
+</form>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+ Copyright © W3Schools.com</div>
+
+</body>
+</html> 

@@ -1,0 +1,303 @@
+<html>
+<!--<body> -->
+<head>
+<script language="javascript" type="text/javascript" src="js/flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/flot/jquery.flot.pie.pack.js"></script>
+
+<script type="text/javascript">
+function result() {
+// name cookie
+ var name_cookie=readCookie("your_name");
+ 
+ 
+// total distance for 3 days
+	var t1_distance= parseInt(readCookie("day_distance_1"));
+	var t2_distance= parseInt(readCookie("day_distance_2"));
+	var t3_distance= parseInt(readCookie("day_distance_3"));
+	var distance= (t1_distance+t2_distance+t3_distance);
+	
+	
+// total time for 3 days
+	
+	var t1_time= parseInt(readCookie("tag_1_time"));
+	var t2_time= parseInt (readCookie("tag_2_time"));
+	var t3_time= parseInt (readCookie("tag_3_time"));
+	
+	var time=(t1_time+t2_time+t3_time);
+	
+	
+// average number of trips for 3 days
+    var trips_day_1=parseInt(readCookie("trips_day_1"));
+	var trips_day_2=parseInt(readCookie("trips_day_2"));
+	var trips_day_3=parseInt(readCookie("trips_day_3"));
+	
+	var trips=(trips_day_1+trips_day_2+trips_day_3);
+
+// Modal split auf Wegebasis	
+      // tag 1
+	var fuss_1=parseInt(readCookie("day_1_FUSS"));
+	var rad_1=parseInt(readCookie("day_1_RAD"));
+	var PKW_1=parseInt(readCookie("day_1_PKW"));
+	var öv_1=parseInt(readCookie("day_1_ÖV"));
+	var sonst_1=parseInt(readCookie("day_1_SONST"));
+	
+// tag 2
+	var fuss_2=parseInt(readCookie("day_2_FUSS"));
+	var rad_2=parseInt(readCookie("day_2_RAD"));
+	var PKW_2=parseInt(readCookie("day_2_PKW"));
+	var öv_2=parseInt(readCookie("day_2_ÖV"));
+	var sonst_2=parseInt(readCookie("day_2_SONST"));
+
+	// tag 3
+	var fuss_3=parseInt(readCookie("day_3_FUSS"));
+	var rad_3=parseInt(readCookie("day_3_RAD"));
+	var PKW_3=parseInt(readCookie("day_3_PKW"));
+	var öv_3=parseInt(readCookie("day_3_ÖV"));
+	var sonst_3=parseInt(readCookie("day_3_SONST"));
+	
+	
+	var fuss=(fuss_1+fuss_2+fuss_3);
+	var rad=(rad_1+rad_2+rad_3);
+    var PKW=(PKW_1+PKW_2+PKW_3);
+	var ÖV= (öv_1+öv_2+öv_3);
+	var sonst=(sonst_1+sonst_2+sonst_3);
+	
+// to erase the cookie
+
+eraseCookie("your_name");
+
+eraseCookie("Tag_1_diatnce");
+eraseCookie("Tag_2_diatnce");
+eraseCookie("Tag_3_diatnce");
+
+eraseCookie("Tag_1_time");
+eraseCookie("Tag_2_time");
+eraseCookie("Tag_3_time");
+
+eraseCookie("trips_day_1");
+eraseCookie("trips_day_2");
+eraseCookie("trips_day_3");
+
+eraseCookie("day_1_FUSS");
+eraseCookie("day_1_RAD");
+eraseCookie("day_1_PKW");
+eraseCookie("day_1_ÖV");
+eraseCookie("day_1_SONST");
+
+eraseCookie("day_2_FUSS");
+eraseCookie("day_2_RAD");
+eraseCookie("day_2_PKW");
+eraseCookie("day_2_ÖV");
+eraseCookie("day_2_SONST");
+
+eraseCookie("day_3_FUSS");
+eraseCookie("day_3_RAD");
+eraseCookie("day_3_PKW");
+eraseCookie("day_3_ÖV");
+eraseCookie("day_3_SONST");
+
+
+// result
+
+    document.forms["myForm"]["name"].value=name_cookie;
+	document.forms["myForm"]["distance"].value=((distance/3).toFixed(1));
+	document.forms["myForm"]["time"].value=((time/3).toFixed(1));
+	document.forms["myForm"]["trips"].value=((trips/3).toFixed(1));
+	document.forms["myForm"]["fuss"].value=Math.round(fuss * 100/(fuss+rad+PKW+ÖV+sonst));
+	document.forms["myForm"]["rad"].value=Math.round(rad * 100/(fuss+rad+PKW+ÖV+sonst));
+	document.forms["myForm"]["PKW"].value=Math.round(PKW* 100/(fuss+rad+PKW+ÖV+sonst));
+	document.forms["myForm"]["ÖV"].value=Math.round(ÖV* 100/(fuss+rad+PKW+ÖV+sonst));
+    document.forms["myForm"]["sonst"].value=Math.round(sonst* 100/(fuss+rad+PKW+ÖV+sonst));
+
+
+return true;
+	
+}
+
+// Modal split auf Wegebasis	
+      // tag 1
+	var fuss_1=parseInt(readCookie("day_1_FUSS"));
+	var rad_1=parseInt(readCookie("day_1_RAD"));
+	var PKW_1=parseInt(readCookie("day_1_PKW"));
+	var öv_1=parseInt(readCookie("day_1_ÖV"));
+	var sonst_1=parseInt(readCookie("day_1_SONST"));
+	
+// tag 2
+	var fuss_2=parseInt(readCookie("day_2_FUSS"));
+	var rad_2=parseInt(readCookie("day_2_RAD"));
+	var PKW_2=parseInt(readCookie("day_2_PKW"));
+	var öv_2=parseInt(readCookie("day_2_ÖV"));
+	var sonst_2=parseInt(readCookie("day_2_SONST"));
+
+	// tag 3
+	var fuss_3=parseInt(readCookie("day_3_FUSS"));
+	var rad_3=parseInt(readCookie("day_3_RAD"));
+	var PKW_3=parseInt(readCookie("day_3_PKW"));
+	var öv_3=parseInt(readCookie("day_3_ÖV"));
+	var sonst_3=parseInt(readCookie("day_3_SONST"));
+	
+	var fuss=(fuss_1+fuss_2+fuss_3);
+	var rad=(rad_1+rad_2+rad_3);
+    var PKW=(PKW_1+PKW_2+PKW_3);
+	var ÖV= (öv_1+öv_2+öv_3);
+	var sonst=(sonst_1+sonst_2+sonst_3);
+  
+	var fuss_total=0;
+	var rad_total=0;
+	var PKW_total=0;
+	var sonst_total=0;
+
+	var fuss_total=(fuss * 100/(fuss+rad+PKW+ÖV+sonst));
+	var rad_total=(rad * 100/(fuss+rad+PKW+ÖV+sonst));
+	var PKW_total=(PKW* 100/(fuss+rad+PKW+ÖV+sonst));
+	var ÖV_total=(ÖV* 100/(fuss+rad+PKW+ÖV+sonst));
+	var sonst_total=(sonst* 100/(fuss+rad+PKW+ÖV+sonst));
+	
+	 /*
+	 createCookie("fuss_total_result", 20);
+	 createCookie("rad_total_result", 11);
+	 createCookie("PKW_total_result", 56);
+	 createCookie("OV_total_result", 12);
+	 createCookie("sonst_total_result",1);
+	*/
+     createCookie("fuss_total_result", fuss_total);
+	 createCookie("rad_total_result", rad_total);
+	 createCookie("PKW_total_result", PKW_total);
+	 createCookie("OV_total_result", ÖV_total);
+	 createCookie("sonst_total_result", sonst_total);
+	
+	
+		  var data_1 = {
+					items: [{label:'FUSS', data : fuss_total+.01 },
+						   {label:'RAD', data : rad_total+.01},
+						   {label:'PKW', data : PKW_total+.01},
+						   {label:'ÖV', data : ÖV_total+.01},
+						   {label:'SONST', data : sonst_total +.01}]
+					};
+		  // FLOT
+		  jQuery(function () {
+		    jQuery.plot(jQuery("#Your_pie_graph"), data_1.items, {
+				pie: { 
+					show: true, 
+					pieStrokeLineWidth: 2, 
+					pieStrokeColor: '#FFF', 
+					pieChartRadius: 80, 			// by default it calculated by 
+					centerOffsetTop:5,
+					centerOffsetLeft:5, 			// if 'auto' and legend position is "nw" then centerOffsetLeft is equal a width of //legend.
+					showLabel:false,				//use ".pieLabel div" to format looks of labels
+					labelOffsetFactor: 4/5, 		// part of radius (default 5/6)
+				 //   labelOffset: 10,        		// offset in pixels if > 0 then labelOffsetFactor is ignored
+					labelBackgroundOpacity: 0.55, 	// default is 0.85
+					labelFormatter: function(serie){// default formatter is "serie.label"
+					return serie.label +'<br/>'+Math.round(serie.percent)+'%';
+					}
+				},
+				legend: {
+					show: true, 
+					position: "yes", 
+					backgroundOpacity:1
+				}
+			})
+		  });
+
+		
+		 var data = {
+					items: [{label:'FUSS', data: 20},
+						   {label:'RAD', data: 11},
+						   {label:'PKW', data: 56},
+						   {label:'ÖV', data: 12},
+						   {label:'SONST', data: 1}]
+					};
+
+		  // FLOT
+		  jQuery(function () {
+		    jQuery.plot(jQuery("#MOP_pie_graph"), data.items, {
+				pie: { 
+					show: true, 
+					pieStrokeLineWidth: 2, 
+					pieStrokeColor: '#FFF', 
+					pieChartRadius: 80, 			// by default it calculated by 
+					centerOffsetTop:5,
+					centerOffsetLeft:5, 			// if 'auto' and legend position is "nw" then centerOffsetLeft is equal a width of legend.
+					showLabel: false,				//use ".pieLabel div" to format looks of labels
+					labelOffsetFactor: 4/5, 		// part of radius (default 5/6)
+				//	labelOffset: 10,        		// offset in pixels if > 0 then labelOffsetFactor is ignored
+					labelBackgroundOpacity: 0.50, 	// default is 0.85
+					labelFormatter: function(serie){// default formatter is "serie.label"
+					return serie.label +'<br/>'+Math.round(serie.percent)+'%';
+					}
+				},
+				legend: {
+					show: true, 
+					position: "top",
+					backgroundOpacity:1
+				}
+			})
+		  });
+
+	
+// cookies 
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') 
+		c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) 
+		return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+function cookieFunction() {
+  alert("Tag 1: " + readCookie("Tag_1"));
+  createCookie("Tag_1", sum_1);
+  return true;
+}
+	
+</script>
+</head>
+
+ <body onload="result()">
+ 
+ <form name="myForm" action="buildingInfo.html" method="post">
+ 
+ </table>
+ 
+<table border=1> 
+    <tr><th face="arial">Your Mobility</th> <th> <input type="text" name="name" size="25" style="text-align:center; font-family:arial; font-weight:bold"> </th> <th> Average Mobility Pattern in Germany</th> </tr>
+	<tr><th align="char" face="arial">Kilometer Per Person Per Day [km]</th> <th> <input type="text" name="distance" size="25" style="text-align:center; font-family:arial; font-weight:bold"> </th> <th width="175"> 42.0 </th> </tr>
+	<tr><th align="char" face="arial">Time Per Person Per Day [min]</th> <th><input type="text" name="time" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th>  <th> 82.0</th> </tr>
+	<tr><th align="char" face="arial">Trips Per Person Per Day [Number]</th> <th><input type="text" name="trips" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th>  <th> 3.4</th></tr>
+	<tr><th align="char" face="arial">Walking  [%]</th> <th> <input type="text" name="fuss" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th> <th> 20</th></td></tr>
+	<tr><th align="char" face="arial"> Rickshaw [%]</th><th> <input type="text" name="rad" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th><th> 11</th></tr>
+	<tr><th align="char" face="arial">Private Car [%]</th> <th>  <input type="text" name="PKW" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th> <th> 56 </th></tr>
+	<tr><th align="char" face="arial">Public Transport [%]</th> <th><input type="text" name="ÖV" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th><th> 12</th></td></tr>
+	<tr><th align="char"face="arial">Others [%]</th> <th><input type="text" name="sonst" size="25" style="text-align:center; font-family:arial; font-weight:bold"></th><th> 1</th></tr>
+	<tr height="280"><th align="char"face="arial">Shares of Transportation</th><th valign="top"><div id="Your_pie_graph" style="width:170px;height:175px"></th><th valign="top"><div id="MOP_pie_graph" style="width:170px;height:175px"></div></th></tr>
+	
+	<tr>
+	<td colspan="11" align="center" valign="bottom"><input type="submit" value="Next"></td>
+	</tr>
+	<tr>
+	<td colspan="11" align="center" valign="bottom"><input TYPE="button" value="Print" onClick="window.print()"> </td>
+	</tr>
+	</table> 
+</form>
+</body>
+</html> 

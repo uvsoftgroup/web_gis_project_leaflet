@@ -1,0 +1,117 @@
+html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color:Gray ;
+				background-image: url('bd.jpg');
+				background-repeat: no-repeat;
+            }
+			
+p {
+      text-align: justify;
+	  line-height: 20px;
+	  
+}
+
+#marker {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #088;
+        border-radius: 10px;
+        background-color: red;
+        opacity: 0.5;
+      }
+      #dhaka {
+        text-decoration: none;
+        color: red;
+        font-size: 11pt;
+        font-weight: bold;
+        text-shadow: black 0.1em 0.1em 0.2em;
+      }
+      .popover-content {
+        min-width: 180px;
+      }
+	 
+.lcol { 
+width:800px;
+height:600px;
+ 
+
+}
+.footer{
+background-color:Gray;
+clear:both;
+text-align:center;
+position:center;
+}
+.b1 {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:#ff6347;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 9px #999;
+}
+
+.b1:hover {background-color: #3e8e41}
+
+.b1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+	height: 27px;
+}
+
+li {
+    float:left;
+	
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align:lext;
+    padding: 5px 52.90px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: blue;
+}
+.grap{
+width:170px;
+height:175px;
+position:right;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ee82ee;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+

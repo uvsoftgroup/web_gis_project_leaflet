@@ -1,0 +1,1547 @@
+<html>
+<body>
+ <p><font size="5" face="arial"> Your First Day Trips </font> </p>
+<head>
+<script type="text/javascript">
+function formValidation(){
+
+  var trip_count_1 = 0;
+// name 
+ // name ckecking
+ var name=nameckecking(document.forms["myForm"]["name"].value);
+  createCookie("your_name", name);
+  
+ // time calculation 
+	var begin_h_1=get_begin(document.forms["myForm"]["begin_11"].value); 
+	var begin_m_1 =get_begin(document.forms["myForm"]["begin_12"].value);
+	
+	var begin_h_2=get_begin(document.forms["myForm"]["begin_21"].value); 
+	var begin_m_2 =get_begin(document.forms["myForm"]["begin_22"].value);
+	
+	var begin_h_3=get_begin(document.forms["myForm"]["begin_31"].value); 
+	var begin_m_3 =get_begin(document.forms["myForm"]["begin_32"].value);
+	
+	var begin_h_4=get_begin(document.forms["myForm"]["begin_41"].value); 
+	var begin_m_4 =get_begin(document.forms["myForm"]["begin_42"].value);
+	
+	var begin_h_5=get_begin(document.forms["myForm"]["begin_51"].value); 
+	var begin_m_5 =get_begin(document.forms["myForm"]["begin_52"].value);
+	
+	var begin_h_6=get_begin(document.forms["myForm"]["begin_61"].value); 
+	var begin_m_6 =get_begin(document.forms["myForm"]["begin_62"].value);
+	
+	var begin_h_7=get_begin(document.forms["myForm"]["begin_71"].value); 
+	var begin_m_7 =get_begin(document.forms["myForm"]["begin_72"].value);
+	
+	var begin_h_8=get_begin(document.forms["myForm"]["begin_81"].value); 
+	var begin_m_8 =get_begin(document.forms["myForm"]["begin_82"].value);
+	
+	var begin_h_9=get_begin(document.forms["myForm"]["begin_91"].value); 
+	var begin_m_9 =get_begin(document.forms["myForm"]["begin_92"].value);
+	
+	var begin_h_10=get_begin(document.forms["myForm"]["begin_101"].value); 
+	var begin_m_10=get_begin(document.forms["myForm"]["begin_102"].value);
+
+	
+	var end_h_1=get_end(document.forms["myForm"]["end_11"].value); 
+	var end_m_1 =get_end(document.forms["myForm"]["end_12"].value);
+	var end_h_2=get_end(document.forms["myForm"]["end_21"].value); 
+	var end_m_2 =get_end(document.forms["myForm"]["end_22"].value);
+	var end_h_3=get_end(document.forms["myForm"]["end_31"].value); 
+	var end_m_3 =get_end(document.forms["myForm"]["end_32"].value);
+	var end_h_4=get_end(document.forms["myForm"]["end_41"].value); 
+	var end_m_4 =get_end(document.forms["myForm"]["end_42"].value);
+	var end_h_5=get_end(document.forms["myForm"]["end_51"].value); 
+	var end_m_5 =get_end(document.forms["myForm"]["end_52"].value);
+	var end_h_6=get_end(document.forms["myForm"]["end_61"].value); 
+	var end_m_6 =get_end(document.forms["myForm"]["end_62"].value);
+	var end_h_7=get_end(document.forms["myForm"]["end_71"].value); 
+	var end_m_7 =get_end(document.forms["myForm"]["end_72"].value);
+	var end_h_8=get_end(document.forms["myForm"]["end_81"].value); 
+	var end_m_8 =get_end(document.forms["myForm"]["end_82"].value);
+	var end_h_9=get_end(document.forms["myForm"]["end_91"].value); 
+	var end_m_9 =get_end(document.forms["myForm"]["end_92"].value);
+	var end_h_10=get_end(document.forms["myForm"]["end_101"].value); 
+	var end_m_10=get_end(document.forms["myForm"]["end_102"].value);
+	
+	
+	var  begin_zeit_1= (begin_h_1 * 60 + begin_m_1);
+	var  begin_zeit_2= (begin_h_2 * 60 + begin_m_2);
+	var  begin_zeit_3= (begin_h_3 * 60 + begin_m_3);
+	var  begin_zeit_4= (begin_h_4 * 60 + begin_m_4);
+	var  begin_zeit_5= (begin_h_5 * 60 + begin_m_5);
+	var  begin_zeit_6= (begin_h_6 * 60 + begin_m_6);
+	var  begin_zeit_7= (begin_h_7 * 60 + begin_m_7);
+	var  begin_zeit_8= (begin_h_8 * 60 + begin_m_8);
+	var  begin_zeit_9= (begin_h_9 * 60 + begin_m_9);
+	var  begin_zeit_10= (begin_h_10 * 60 + begin_m_10);
+
+	var  end_zeit_1=(end_h_1 * 60 + end_m_1);
+	var  end_zeit_2=(end_h_2 * 60 + end_m_2);
+	var  end_zeit_3=(end_h_3 * 60 + end_m_3);
+	var  end_zeit_4=(end_h_4 * 60 + end_m_4);
+	var  end_zeit_5=(end_h_5 * 60 + end_m_5);
+	var  end_zeit_6=(end_h_6 * 60 + end_m_6);
+	var  end_zeit_7=(end_h_7 * 60 + end_m_7);
+	var  end_zeit_8=(end_h_8 * 60 + end_m_8);
+	var  end_zeit_9=(end_h_9 * 60 + end_m_9);
+	var  end_zeit_10=(end_h_10 * 60 + end_m_10);
+	
+	// trip time
+	var t1t = (end_zeit_1 - begin_zeit_1);
+	var t2t = (end_zeit_2 - begin_zeit_2);
+	var t3t = (end_zeit_3 - begin_zeit_3);
+	var t4t = (end_zeit_4 - begin_zeit_4);
+	var t5t = (end_zeit_5 - begin_zeit_5);
+	var t6t = (end_zeit_6 - begin_zeit_6);
+	var t7t = (end_zeit_7 - begin_zeit_7);
+	var t8t = (end_zeit_8 - begin_zeit_8);
+	var t9t = (end_zeit_9 - begin_zeit_9);
+	var t10t = (end_zeit_10 - begin_zeit_10);
+	
+	// distance calculation
+	var d1=get_distance(document.forms["myForm"]["entfernung1"].value);
+	var d2=get_distance(document.forms["myForm"]["entfernung2"].value);
+	var d3=get_distance(document.forms["myForm"]["entfernung3"].value);
+	var d4=get_distance(document.forms["myForm"]["entfernung4"].value);
+	var d5=get_distance(document.forms["myForm"]["entfernung5"].value);
+	var d6=get_distance(document.forms["myForm"]["entfernung6"].value);
+	var d7=get_distance(document.forms["myForm"]["entfernung7"].value);
+	var d8=get_distance(document.forms["myForm"]["entfernung8"].value);
+	var d9=get_distance(document.forms["myForm"]["entfernung9"].value);
+	var d10=get_distance(document.forms["myForm"]["entfernung10"].value);
+
+
+	//ckecking radiobutton
+	var m1= get_radio_value(document.forms["myForm"]["group1"]);
+	var m2= get_radio_value(document.forms["myForm"]["group2"]);
+	var m3= get_radio_value(document.forms["myForm"]["group3"]);
+	var m4= get_radio_value(document.forms["myForm"]["group4"]);
+	var m5= get_radio_value(document.forms["myForm"]["group5"]);
+	var m6= get_radio_value(document.forms["myForm"]["group6"]);
+	var m7= get_radio_value(document.forms["myForm"]["group7"]);
+	var m8= get_radio_value(document.forms["myForm"]["group8"]);
+	var m9= get_radio_value(document.forms["myForm"]["group9"]);
+	var m10= get_radio_value(document.forms["myForm"]["group10"]);
+    
+	// each trip checking
+	
+	var total_trips = new Object(); 
+	total_trips.FUSS = 0;
+	total_trips.RAD = 0;
+	total_trips.PKW = 0;
+	total_trips.ÖV = 0;
+	total_trips.SONST = 0;
+	
+
+	update_trips_counter(total_trips, m1);
+	update_trips_counter(total_trips, m2);
+	update_trips_counter(total_trips, m3);
+	update_trips_counter(total_trips, m4);
+	update_trips_counter(total_trips, m5);
+	update_trips_counter(total_trips, m6);
+	update_trips_counter(total_trips, m7);
+	update_trips_counter(total_trips, m8);
+	update_trips_counter(total_trips, m9);
+	update_trips_counter(total_trips, m10);
+	/*
+	alert ("No of trips by Fuss:" 	+total_trips.FUSS);
+	alert ("No of trips by rad:" 	+total_trips.RAD);
+	alert ("No of trips by PKW:" 	+total_trips.PKW);
+	alert ("No of trips by öv:" 	+total_trips.ÖV);
+	alert ("No of trips by sonst:" 	+total_trips.SONST);
+	*/
+		
+	var t1=check_trip_data( begin_zeit_1, end_zeit_1, m1, d1, 1);
+	if (d1>0) {trip_count_1++;}
+	var t2=check_trip_data(begin_zeit_2, end_zeit_2, m2, d2, 2);
+	if (d2>0) {trip_count_1++;}
+	var t3=check_trip_data(begin_zeit_3, end_zeit_3, m3, d3, 3);
+	if (d3>0) {trip_count_1++;}
+	var t4=check_trip_data(begin_zeit_4, end_zeit_4, m4, d4, 4);
+	if (d4>0) {trip_count_1++;}
+	var t5=check_trip_data(begin_zeit_5, end_zeit_5, m5, d5, 5);
+	if (d5>0) {trip_count_1++;}
+	var t6=check_trip_data(begin_zeit_6, end_zeit_6, m6, d6, 6);
+	if (d6>0) {trip_count_1++;}
+	var t7=check_trip_data(begin_zeit_7, end_zeit_7, m7, d7, 7);
+	if (d7>0) {trip_count_1++;}
+	var t8=check_trip_data(begin_zeit_8, end_zeit_8, m8, d8, 8);
+	if (d8>0) {trip_count_1++;}
+	var t9=check_trip_data(begin_zeit_9, end_zeit_9, m9, d9, 9);
+	if (d10>0) {trip_count_1++;}
+	var t10=check_trip_data(begin_zeit_10, end_zeit_10, m10, d10, 10);
+	if (d10>0) {trip_count_1++;}
+	
+	
+ // total distance and time
+	var distance_1=(d1+d2+d3+d4+d5+d6+d7+d8+d9+d10); 
+	var time_1=(t1t+t2t+t3t+t4t+t5t+t6t+t7t+t8t+t9t+t10t); 
+	
+//calling funtion for cookie reading and creating
+	// distance for day 1
+  createCookie("day_distance_1", distance_1);
+	// time for day 1
+  createCookie("tag_1_time", time_1);
+ 
+  // number of trips for day 1
+  createCookie("trips_day_1", trip_count_1);
+ // Modal split
+ createCookie("day_1_FUSS", total_trips.FUSS);
+ createCookie("day_1_RAD", total_trips.RAD);
+ createCookie("day_1_PKW", total_trips.PKW);
+ createCookie("day_1_ÖV", total_trips.ÖV);
+ createCookie("day_1_SONST", total_trips.SONST); 
+ 
+ if (t1<=0 || t2<=0 || t3<=0 || t4<=0 || t5<=0 || t6<=0 || t7<=0 || t8<=0 || t9<=0 || t10<=0){
+	return false;
+	} else {
+    return true;
+	}
+ 
+}
+
+		
+function update_trips_counter(total_trips, mode){
+		if (mode=="FUSS") { total_trips.FUSS++;}
+		if (mode=="RAD") { total_trips.RAD++;}
+		if (mode=="PKW") { total_trips.PKW++;}
+		if (mode=="ÖV") { total_trips.ÖV++;}
+		if (mode=="SONST") { total_trips.SONST++;}
+		} 
+
+
+// trip counting function
+function nameckecking(name){
+
+	if (name==null || name=="") {
+		alert("Please put your name!");	
+		return 0;
+	} 
+	else {
+		return name;
+	
+	}
+}
+
+
+// check given data for trip
+function check_trip_data(begin_time, end_time, mode, distance, trip_no)
+{
+
+// trip time checking
+	if ((begin_time >= end_time) && (typeof mode!='undefined')) {
+		alert ("Trip " + trip_no + ":Time is not correct!");
+		return 0;
+	} 
+// transport mode checking 
+	if (typeof mode=='undefined' && distance > 0){
+		alert ("Trip " + trip_no + ":Transport Mode!");
+		return 0;
+	}
+// trip distance checking  
+	if (typeof mode!='undefined' && distance <= 0){
+		alert ("Trip" + trip_no + ":Distance is not correct!");
+		return 0;
+	}
+   return 1;
+}
+
+// Type of verkehrsmittel
+function get_radio_value(radio_button_group)
+{
+	for (var i=0; i<radio_button_group.length; i++)
+	{
+    if (radio_button_group[i].checked)
+		{
+		var rad_val =radio_button_group[i].value;
+		return rad_val;
+       }
+    }
+} 
+
+// distance checking function	
+function get_distance(entferung)        
+{       
+	if (entferung==null || entferung=="") {
+		return false;
+	} else if (isNaN(parseFloat(entferung))) {
+		alert("Distance is not correct!");
+		return false;
+	} else {
+		return parseFloat(entferung);
+	}
+}
+
+
+// begin zeit function
+
+function get_begin(zeit_begin)        
+{       
+	if (zeit_begin==null || zeit_begin=="") {
+		return 0;
+	} else if (isNaN(parseInt(zeit_begin))) {
+		alert("Time is not correct or time is not properly enter");
+		return 0;
+	} 
+	else {
+		return parseInt(zeit_begin);
+	}
+}
+
+// end zeit function
+	
+function get_end(zeit_end)        
+{       
+	if (zeit_end==null || zeit_end=="") {
+		return 0;
+	} else if (isNaN(parseInt(zeit_end))) {
+		alert("Time is not correct or time is not properly enter!");
+		return 0;
+		
+	} else {
+		return parseInt(zeit_end);
+	}
+}
+
+  
+// cookies 
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') 
+		c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) 
+		return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+
+function cookieFunction() {
+  alert("Tag 1: " + readCookie("Tag_1"));
+  createCookie("Tag_1", sum_1);
+  return true;
+}
+				
+		
+</script>
+</head>
+
+<form name="myForm" action="tag2.html" method="post" onsubmit="return formValidation()" >
+Name(Optional): 
+<input type="text" id="txt_name" name="name" size="25"> 
+
+<table border=0>
+<tr>
+<th>Trip:</th>
+<th colspan=2>Start:</th>
+<th colspan=2>End:</th>
+<th colspan=5> Transport Mode:</th>
+<th> Distance [km]:</th>
+</td>
+</td>
+</td>
+</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>
+<select name="begin_11"> 
+	<option value="" checked></option> 
+	<option value="0">0</option> 
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option> 
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option> 
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option> 
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option> 
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option> 
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option> 
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option> 
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	</select>
+</td>
+
+<td>
+<select name="begin_12">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_11"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_12">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group1" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group1" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group1" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group1" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group1" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung1" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>2</td>
+<td>
+<select name="begin_21"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_22">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_21"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_22">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group2" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group2" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group2" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group2" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group2" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung2" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>3</td>
+<td>
+<select name="begin_31"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_32">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_31"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_32">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group3" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group3" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group3" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group3" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group3" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung3" size="14"/>
+</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>
+<select name="begin_41">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_42">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_41"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_42">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group4" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group4" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group4" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group4" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group4" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung4" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>5</td>
+<td>
+<select name="begin_51">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_52">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_51">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_52">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group5" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group5" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group5" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group5" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group5" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung5" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>6</td>
+<td>
+<select name="begin_61">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_62">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_61">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_62">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group6" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group6" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group6" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group6" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group6" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung6" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>7</td>
+<td>
+<select name="begin_71">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_72">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_71">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_72">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group7" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group7" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group7" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group7" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group7" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung7" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>8</td>
+<td>
+<select name="begin_81">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_82">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_81">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_82">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group8" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group8" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group8" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group8" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group8" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung8" size="14"/>
+</td>
+</tr>
+
+
+<tr>
+<td>9</td>
+<td>
+<select name="begin_91">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_92">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_91"> 
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_92">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group9" value="FUSS" /> Walk<br/>
+</td>
+<td><input type="radio" name="group9" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group9" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group9" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group9" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung9" size="14"/>
+</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>
+<select name="begin_101">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="begin_102">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+<td>
+<select name="end_101">
+<option value="" checked></option>  
+<option value="0">0</option> 
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option> 
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option> 
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option> 
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option> 
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option> 
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option> 
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+</select>
+</td>
+<td>
+<select name="end_102">
+<option value="" checked></option> 
+<option value="0">0</option> 
+<option value="5">5</option> 
+<option value="10">10</option>
+<option value="15">15</option> 
+<option value="20">20</option> 
+<option value="25">25</option>
+<option value="30">30</option> 
+<option value="35">35</option> 
+<option value="40">40</option>
+<option value="45">45</option> 
+<option value="50">50</option> 
+<option value="55">55</option>
+</select>
+</td>
+
+<td>
+<input type="radio" name="group10" value="FUSS" /> Walk<br/>
+</td>
+<td>
+<input type="radio" name="group10" value="RAD" />Rickshaw<br/>
+</td>
+<td>
+<input type="radio" name="group10" value="PKW" />Private Car<br/>
+</td>
+<td>
+<input type="radio" name="group10" value="ÖV" />Public Transport<br />
+</td>
+<td>
+<input type="radio" name="group10" value="SONST" />Others<br />
+</td>
+<td>
+<input type="text" name="entfernung10" size="14"/>
+</td>
+</tr>
+<tr height="60">
+<td colspan="11" align="center" valign="bottom"><input type="submit" value="Weiter"></td>
+</tr>
+</table>
+
+</form>
+ 
+</body>
+</html> 
